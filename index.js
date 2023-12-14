@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt');
-const DB_URL = "mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority"
+//const DB_URL = "mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority"
 
 
 
@@ -14,7 +14,7 @@ const app = express();
 const port = 3000;
 
 // Connect to MongoDB
-mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Failed to connect to MongoDB', err));
 
@@ -25,7 +25,7 @@ if(process.env.NODE_ENV !== 'production'){
 }
 
 //strict query
-mongoose.set('strictQuery', true);
+//mongoose.set('strictQuery', true);
 
 
 // Start the server
